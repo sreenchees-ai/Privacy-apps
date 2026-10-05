@@ -1,0 +1,436 @@
+<!doctype html>
+<!--
+  ScreenLink — Privacy Policy
+  EDIT BEFORE PUBLISHING:
+    1. Replace YOUR-EMAIL@rebrar.in (in the "Contact" section) with a real address you check.
+    2. If you change how the app works, update the "Effective" date and the relevant section.
+  Upload as e.g. https://rebrar.in/screenlink/privacy-policy.html and use that URL in
+  Google Play Console (App content → Privacy policy).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — ScreenLink</title>
+  <meta name="description" content="How the ScreenLink screen-sharing app handles your screen, pairing codes, connection data and ads. No accounts, no recordings, nothing stored after a session.">
+  <meta name="robots" content="index, follow">
+  <style>
+    :root {
+      --signal: #1F4FD8;
+      --mint: #0F9D8A;
+      --mist: #F3F6FA;
+      --ink: #121A2B;
+      --muted: #535D6F;
+      --line: #D5DBE5;
+      --paper: #FFFFFF;
+      --signal-soft: #E6ECFB;
+      --mint-soft: #E2F4F1;
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --signal: #7C9BF2;
+        --mint: #3CC7B3;
+        --mist: #0E1422;
+        --ink: #E7EBF3;
+        --muted: #A0AABB;
+        --line: #283247;
+        --paper: #151D2E;
+        --signal-soft: #1A2647;
+        --mint-soft: #11302D;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      margin: 0;
+      background: var(--mist);
+      color: var(--ink);
+      font-family: Roboto, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    a { color: var(--signal); text-underline-offset: 2px; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    .site-header { padding: 22px 0; }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--ink); text-decoration: none; }
+    .brand-mark { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: #1F4FD8; color: #fff; font-size: 14px; letter-spacing: .5px; }
+    .header-note { color: var(--muted); font-size: 15px; }
+
+    /* Hero */
+    .hero { padding: 28px 0 8px; }
+    .hero h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 14px; font-weight: 800; }
+    .lede { font-size: clamp(1.1rem, 2.2vw, 1.3rem); color: var(--muted); max-width: 40ch; margin: 0 0 10px; line-height: 1.5; }
+    .effective { font-size: 15px; color: var(--muted); margin: 0; }
+
+    /* The data-flow diagram: the one bold element on the page */
+    .flow { margin: 34px 0 10px; background: var(--paper); border: 1px solid var(--line); border-radius: 22px; padding: 26px 22px 20px; }
+    .flow svg { display: block; width: 100%; height: auto; }
+    .flow .flow-wide { max-height: 320px; }
+    .flow .flow-tall { display: none; max-width: 360px; margin: 0 auto; }
+    .flow figcaption { color: var(--muted); font-size: 15px; margin-top: 10px; max-width: 70ch; }
+    .flow .device { fill: var(--mist); stroke: var(--ink); stroke-width: 2.5; }
+    .flow .screen-a { fill: var(--signal); }
+    .flow .screen-b { fill: var(--signal); opacity: .85; }
+    .flow .server { fill: var(--mist); stroke: var(--muted); stroke-width: 2; stroke-dasharray: 6 5; }
+    .flow .video { stroke: var(--mint); stroke-width: 5; fill: none; stroke-linecap: round; }
+    .flow .intro { stroke: var(--muted); stroke-width: 2; fill: none; stroke-dasharray: 3 6; stroke-linecap: round; }
+    .flow .t-strong { fill: var(--ink); font-weight: 700; font-size: 17px; }
+    .flow .t { fill: var(--muted); font-size: 15px; }
+    .flow .t-mint { fill: var(--mint); font-weight: 700; font-size: 16px; }
+
+    /* At a glance */
+    .glance { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 26px 0 8px; background: var(--paper); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; }
+    .glance > div { padding: 24px 26px; }
+    .glance > div + div { border-left: 1px solid var(--line); }
+    .glance h2 { font-size: 1.15rem; margin: 0 0 12px; display: flex; align-items: center; gap: 10px; }
+    .glance h2 .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+    .glance .used .dot { background: var(--signal); }
+    .glance .never .dot { background: var(--mint); }
+    .glance ul { margin: 0; padding-left: 20px; }
+    .glance li { margin: 6px 0; }
+    .glance li::marker { color: var(--muted); }
+
+    /* Policy body with sticky contents */
+    .policy { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 56px; padding: 44px 0 64px; }
+    .toc { position: sticky; top: 20px; align-self: start; font-size: 15px; }
+    .toc h2 { font-size: 15px; margin: 0 0 10px; color: var(--muted); font-weight: 600; }
+    .toc ol { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+    .toc a { display: block; padding: 5px 0 5px 14px; margin-left: -2px; border-left: 2px solid transparent; color: var(--ink); text-decoration: none; }
+    .toc a:hover { border-left-color: var(--signal); color: var(--signal); }
+    .toc details summary { display: none; }
+
+    article { max-width: 68ch; }
+    article section { padding-top: 6px; margin-bottom: 38px; scroll-margin-top: 16px; }
+    article h2 { font-size: 1.5rem; line-height: 1.25; margin: 0 0 12px; letter-spacing: -0.01em; }
+    article h3 { font-size: 1.1rem; margin: 22px 0 6px; }
+    article p, article ul { margin: 0 0 14px; }
+    article ul { padding-left: 22px; }
+    article li { margin: 6px 0; }
+    .callout { border-left: 4px solid var(--mint); background: var(--mint-soft); padding: 14px 18px; border-radius: 0 12px 12px 0; margin: 16px 0; }
+    .callout p:last-child { margin-bottom: 0; }
+
+    .table-scroll { overflow-x: auto; margin: 10px 0 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
+    table { border-collapse: collapse; width: 100%; font-size: 15.5px; min-width: 520px; }
+    th, td { text-align: left; vertical-align: top; padding: 11px 14px; border-bottom: 1px solid var(--line); }
+    th { font-weight: 700; background: var(--signal-soft); }
+    tr:last-child td { border-bottom: none; }
+    td:first-child { font-weight: 600; }
+
+    .contact-card { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+    .contact-card p { margin: 4px 0; }
+
+    .site-footer { border-top: 1px solid var(--line); padding: 22px 0 34px; color: var(--muted); font-size: 15px; }
+
+    /* Mobile */
+    @media (max-width: 860px) {
+      .policy { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-top: 30px; }
+      .toc { position: static; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 4px 16px; }
+      .toc > h2 { display: none; }
+      .toc details summary { display: block; cursor: pointer; padding: 12px 0; font-weight: 600; }
+      .toc ol { margin-bottom: 14px; }
+      .glance { grid-template-columns: 1fr; }
+      .glance > div + div { border-left: none; border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 600px) {
+      /* Tables become stacked rows so no column is hidden off-screen. */
+      .table-scroll { overflow: visible; }
+      table { min-width: 0; }
+      table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      table, table tbody, table tr, table td { display: block; width: 100%; }
+      table tr { padding: 12px 16px; border-bottom: 1px solid var(--line); }
+      table tr:last-child { border-bottom: none; }
+      table td { border: none; padding: 2px 0; }
+      table td:first-child { font-size: 1.02em; margin-bottom: 4px; }
+      table td:not(:first-child)::before { content: attr(data-label) ": "; color: var(--muted); font-weight: 600; }
+      .flow .flow-wide { display: none; }
+      .flow .flow-tall { display: block; }
+    }
+    @media (max-width: 520px) {
+      body { font-size: 16px; }
+      .wrap { padding: 0 18px; }
+      .flow { padding: 18px 12px 14px; }
+      .header-note { display: none; }
+    }
+
+    @media print {
+      body { background: #fff; color: #000; font-size: 12pt; }
+      .toc, .site-header .header-note, .flow .flow-tall { display: none; }
+      .flow .flow-wide { display: block; }
+      .policy { display: block; }
+      .flow, .glance, .table-scroll, .contact-card { border-color: #999; }
+      a { color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="ScreenLink privacy policy, top of page"><span class="brand-mark" aria-hidden="true">SL</span> ScreenLink</a>
+      <span class="header-note">by rebrar.in</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+      <section class="hero" aria-labelledby="page-title">
+        <h1 id="page-title">Privacy policy</h1>
+        <p class="lede">ScreenLink lets one phone show its screen live to another phone or a computer. This page explains exactly what that involves.</p>
+        <p class="effective">Effective 5 October 2026. Applies to the ScreenLink Android app and its web viewer.</p>
+      </section>
+
+      <figure class="flow">
+        <svg class="flow-wide" viewBox="0 0 900 320" role="img" aria-labelledby="flow-title flow-desc">
+          <title id="flow-title">How a ScreenLink session works</title>
+          <desc id="flow-desc">The sharing phone sends its screen as encrypted live video directly to the viewing device. The signalling server only introduces the two devices using the pairing code and keeps nothing after the session.</desc>
+
+          <!-- Signalling server -->
+          <rect class="server" x="280" y="10" width="340" height="80" rx="16"/>
+          <text class="t-strong" x="450" y="43" text-anchor="middle">Signalling server</text>
+          <text class="t" x="450" y="68" text-anchor="middle">introduces the devices, stores nothing</text>
+          <path class="intro" d="M280 62 C 210 72, 175 100, 168 126"/>
+          <path class="intro" d="M620 62 C 690 72, 725 100, 732 126"/>
+
+          <!-- Sharing phone -->
+          <rect class="device" x="120" y="130" width="96" height="148" rx="16"/>
+          <rect class="screen-a" x="132" y="146" width="72" height="104" rx="6"/>
+          <text class="t-strong" x="168" y="306" text-anchor="middle">Sharing phone</text>
+
+          <!-- Live video -->
+          <path class="video" d="M232 204 L 668 204"/>
+          <path d="M656 192 L 674 204 L 656 216" fill="none" stroke="var(--mint)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text class="t-mint" x="450" y="188" text-anchor="middle">Live video, encrypted end to end</text>
+          <text class="t" x="450" y="236" text-anchor="middle">Not recorded. Not saved. Gone when sharing stops.</text>
+
+          <!-- Viewing device -->
+          <rect class="device" x="684" y="130" width="96" height="148" rx="16"/>
+          <rect class="screen-b" x="696" y="146" width="72" height="104" rx="6"/>
+          <text class="t-strong" x="732" y="306" text-anchor="middle">Viewing device</text>
+        </svg>
+        <svg class="flow-tall" viewBox="0 0 360 590" role="img" aria-labelledby="flow-title-m flow-desc-m">
+          <title id="flow-title-m">How a ScreenLink session works</title>
+          <desc id="flow-desc-m">The sharing phone sends encrypted live video directly to the viewing device. The signalling server only introduces them and keeps nothing.</desc>
+          <rect class="server" x="16" y="10" width="328" height="78" rx="16"/>
+          <text class="t-strong" x="180" y="42" text-anchor="middle">Signalling server</text>
+          <text class="t" x="180" y="66" text-anchor="middle">introduces the devices, stores nothing</text>
+          <path class="intro" d="M180 88 L180 116"/>
+          <path class="intro" d="M344 64 C 362 180, 362 430, 232 470"/>
+
+          <rect class="device" x="132" y="120" width="96" height="140" rx="16"/>
+          <rect class="screen-a" x="144" y="136" width="72" height="96" rx="6"/>
+          <text class="t-strong" x="180" y="286" text-anchor="middle">Sharing phone</text>
+
+          <path class="video" d="M180 302 L180 410"/>
+          <path d="M168 398 L180 416 L192 398" fill="none" stroke="var(--mint)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <text class="t-mint" x="196" y="336">Live video,</text>
+          <text class="t-mint" x="196" y="358">encrypted</text>
+          <text class="t-mint" x="196" y="380">end to end</text>
+          <text class="t" x="164" y="346" text-anchor="end">Not recorded.</text>
+          <text class="t" x="164" y="368" text-anchor="end">Not saved.</text>
+
+          <rect class="device" x="132" y="428" width="96" height="140" rx="16"/>
+          <rect class="screen-b" x="144" y="444" width="72" height="96" rx="6"/>
+          <text class="t-strong" x="180" y="586" text-anchor="middle">Viewing device</text>
+        </svg>
+        <figcaption>When a direct connection isn't possible, the encrypted video passes through a relay server (TURN). The relay forwards it without being able to watch it.</figcaption>
+      </figure>
+
+      <div class="glance">
+        <div class="used">
+          <h2><span class="dot" aria-hidden="true"></span>What ScreenLink uses</h2>
+          <ul>
+            <li>Your live screen, only while you share and after you approve Android's screen-capture prompt</li>
+            <li>Your device's pairing code, to connect the two devices</li>
+            <li>Network connection details (such as IP addresses) needed to deliver the video</li>
+            <li>Advertising data handled by Google AdMob, as described below</li>
+          </ul>
+        </div>
+        <div class="never">
+          <h2><span class="dot" aria-hidden="true"></span>Never collected</h2>
+          <ul>
+            <li>No account, name, email or phone number</li>
+            <li>No screen recordings, screenshots, photos or videos</li>
+            <li>No contacts, files, camera, microphone or location</li>
+            <li>No sale of your data, and no tracking for our own purposes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy">
+        <nav class="toc" aria-label="Contents">
+          <h2>Contents</h2>
+          <details open>
+            <summary>Contents</summary>
+            <ol>
+              <li><a href="#who">Who we are</a></li>
+              <li><a href="#screen">Your screen content</a></li>
+              <li><a href="#codes">Pairing codes</a></li>
+              <li><a href="#server">Signalling server</a></li>
+              <li><a href="#relay">STUN and TURN servers</a></li>
+              <li><a href="#web">Watching on a computer</a></li>
+              <li><a href="#ads">Advertising</a></li>
+              <li><a href="#permissions">App permissions</a></li>
+              <li><a href="#retention">How long data is kept</a></li>
+              <li><a href="#security">Security</a></li>
+              <li><a href="#rights">Your choices and rights</a></li>
+              <li><a href="#children">Children</a></li>
+              <li><a href="#changes">Changes to this policy</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ol>
+          </details>
+        </nav>
+
+        <article>
+          <section id="who">
+            <h2>Who we are</h2>
+            <p>ScreenLink is developed and published by Abrar Ali (rebrar.in), based in Srinagar, Jammu &amp; Kashmir, India. In this policy, “we”, “us” and “our” mean the ScreenLink developer. “You” means anyone who uses the ScreenLink app or its web viewer.</p>
+            <p>ScreenLink does not have user accounts. You never sign up, log in or give us your name, email address or phone number.</p>
+          </section>
+
+          <section id="screen">
+            <h2>Your screen content</h2>
+            <p>ScreenLink only captures your screen after you tap <strong>START SHARING</strong> and approve Android's own screen-capture prompt. While sharing is on, Android shows a notification and a status-bar indicator, and you can stop at any time with <strong>STOP SHARING</strong>, the notification's Stop button or Android's own controls.</p>
+            <ul>
+              <li>Your screen is sent as live video directly to the one device that connected with your pairing code.</li>
+              <li>The video is encrypted in transit using the standard WebRTC protocols (DTLS-SRTP).</li>
+              <li>Nothing is recorded or saved, on your phone, on the viewer's device or on our servers. To show a still screen to someone who joins, the app keeps only the most recent frame in your phone's memory, and discards it when sharing stops.</li>
+              <li>Only one viewer can be connected at a time, and your phone shows when someone is watching.</li>
+            </ul>
+            <div class="callout">
+              <p>Anything visible on your screen while sharing, including notifications and messages, can be seen by the viewer. Only share your code with people you trust, and stop sharing when you're done.</p>
+            </div>
+          </section>
+
+          <section id="codes">
+            <h2>Pairing codes</h2>
+            <p>Each device gets a random 8-character pairing code the first time it's needed. The code is created on your device, is not linked to your identity, and is stored only in the app's private storage. It is excluded from Android backups and device-to-device transfers.</p>
+            <p>When you share or connect, the code is sent to our signalling server so the two devices can find each other. Anyone who knows your code can ask to watch while you are sharing, so treat it like a temporary key.</p>
+          </section>
+
+          <section id="server">
+            <h2>Signalling server</h2>
+            <p>Before two devices can connect, they exchange a few technical messages through our signalling server. These include the pairing code, a random session token, and WebRTC connection details, which contain network addresses such as IP addresses.</p>
+            <ul>
+              <li>All of this is held in the server's memory only, never written to a database or file.</li>
+              <li>A session is deleted as soon as sharing stops, 30 seconds after the sharing phone loses its connection, or after 8 hours at the most.</li>
+              <li>To prevent people guessing codes, the server counts failed connection attempts per IP address for up to one minute.</li>
+              <li>Pairing codes are never written to server logs. Our hosting provider may keep standard network logs, such as IP addresses and connection times, for security and reliability, under its own policies.</li>
+              <li>Your screen's video does not pass through the signalling server.</li>
+            </ul>
+          </section>
+
+          <section id="relay">
+            <h2>STUN and TURN servers</h2>
+            <p>To find a network route between the two devices, the app contacts STUN servers (by default, Google's public STUN servers). These servers see your device's public IP address, as any internet service does.</p>
+            <p>If a direct connection isn't possible, for example on some mobile networks, the encrypted video is passed through a TURN relay server operated by us or by a hosting provider we use. The relay forwards encrypted data and cannot see your screen. It uses short-lived credentials and keeps nothing after the session, apart from any standard network logs kept by the hosting provider.</p>
+          </section>
+
+          <section id="web">
+            <h2>Watching on a computer</h2>
+            <p>The viewer can also watch in a web browser on a computer. The web viewer works the same way as the app: it connects with the pairing code, receives live encrypted video, and saves nothing. It uses no cookies, no analytics and no ads, and loads nothing from third-party websites.</p>
+          </section>
+
+          <section id="ads">
+            <h2>Advertising</h2>
+            <p>ScreenLink is free and shows ads through Google AdMob, using the Google Mobile Ads SDK. Ads appear on the home screen and the code entry screen, and occasionally after a viewing session has ended.</p>
+            <p>Ads are never shown while your phone is sharing its screen, and never over a live remote screen.</p>
+            <h3>What Google collects</h3>
+            <p>To show and measure ads and to prevent fraud, the Google Mobile Ads SDK may collect your device's advertising ID, IP address, general device and app information, and how you interact with ads. Google processes this data as described in <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses information from apps that use its services</a> and the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</p>
+            <h3>Consent and your choices</h3>
+            <ul>
+              <li>In the European Economic Area, the United Kingdom, Switzerland and US states with privacy laws, the app asks for your consent or choices using Google's consent tool before ads are personalized.</li>
+              <li>Where required, a <strong>Privacy &amp; ad settings</strong> link on the home screen lets you change your choices at any time.</li>
+              <li>On any Android device, you can reset or delete your advertising ID in <em>Settings → Privacy → Ads</em> (the exact wording varies by device).</li>
+            </ul>
+            <p>We do not receive your advertising ID or personal data from Google. We only see combined reports, such as how many ads were shown.</p>
+          </section>
+
+          <section id="permissions">
+            <h2>App permissions</h2>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr><th scope="col">Permission</th><th scope="col">Why it's needed</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td data-label="Permission">Internet and network state</td><td data-label="Why it's needed">To connect the two devices, stream video, reconnect after network changes, and load ads.</td></tr>
+                  <tr><td data-label="Permission">Foreground service (screen capture)</td><td data-label="Why it's needed">To keep sharing running, with a visible notification, after you approve screen capture.</td></tr>
+                  <tr><td data-label="Permission">Notifications</td><td data-label="Why it's needed">To show the “Sharing your screen” notification with its Stop button.</td></tr>
+                  <tr><td data-label="Permission">Advertising ID</td><td data-label="Why it's needed">Used by the Google Mobile Ads SDK for ads, subject to your consent choices.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>ScreenLink does not request access to your camera, microphone, contacts, photos, files or location.</p>
+          </section>
+
+          <section id="retention">
+            <h2>How long data is kept</h2>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr><th scope="col">Data</th><th scope="col">Where</th><th scope="col">Kept for</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td data-label="Data">Live screen video</td><td data-label="Where">Sent directly between devices</td><td data-label="Kept for">Not stored</td></tr>
+                  <tr><td data-label="Data">Latest screen frame</td><td data-label="Where">Sharing phone's memory</td><td data-label="Kept for">Until sharing stops</td></tr>
+                  <tr><td data-label="Data">Pairing code</td><td data-label="Where">Your device</td><td data-label="Kept for">Until you clear the app's data or uninstall it</td></tr>
+                  <tr><td data-label="Data">Session details (code, token, connection details)</td><td data-label="Where">Signalling server memory</td><td data-label="Kept for">Until the session ends, at most 8 hours</td></tr>
+                  <tr><td data-label="Data">Failed attempts per IP address</td><td data-label="Where">Signalling server memory</td><td data-label="Kept for">Up to 1 minute</td></tr>
+                  <tr><td data-label="Data">Advertising data</td><td data-label="Where">Google</td><td data-label="Kept for">Under Google's policies</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="security">
+            <h2>Security</h2>
+            <p>Live video is encrypted between devices with DTLS-SRTP, the security built into WebRTC. Release versions of the app connect to the signalling server only over an encrypted connection (WSS). Pairing codes are random and the server limits repeated wrong guesses.</p>
+            <p>No system is perfectly secure. Keep your pairing code private and stop sharing when you're finished.</p>
+          </section>
+
+          <section id="rights">
+            <h2>Your choices and rights</h2>
+            <ul>
+              <li><strong>Stop sharing</strong> at any time; the session and its server data are deleted.</li>
+              <li><strong>Delete your pairing code</strong> by clearing ScreenLink's storage in Android Settings, or by uninstalling the app.</li>
+              <li><strong>Change ad choices</strong> through the Privacy &amp; ad settings link (where shown) or your device's ads settings.</li>
+            </ul>
+            <p>Because we do not create accounts or keep session data after a session ends, we usually hold no information that can be linked to you. Depending on where you live, including under India's Digital Personal Data Protection Act, 2023 and the EU and UK GDPR, you may have rights to access, correct or delete personal data and to withdraw consent. Contact us using the details below and we will respond within 30 days.</p>
+          </section>
+
+          <section id="children">
+            <h2>Children</h2>
+            <p>ScreenLink is not directed at children under 13, and we do not knowingly collect personal data from them. If you believe a child has used ScreenLink in a way that concerns you, please contact us.</p>
+          </section>
+
+          <section id="changes">
+            <h2>Changes to this policy</h2>
+            <p>If we change how ScreenLink handles data, we will update this page and its effective date. Significant changes will also be noted in the app's release notes on Google Play.</p>
+          </section>
+
+          <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-card">
+              <p><strong>Abrar Ali, rebrar.in</strong></p>
+              <p>Srinagar, Jammu &amp; Kashmir, India</p>
+              <p>Email: <a href="mailto:contact.abrarrtallks@gmail.com">contact.abrarrtallks@gmail.com</a></p>
+              
+            </div>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 . ScreenLink privacy policy, effective 5 October 2026.</div>
+  </footer>
+</body>
+</html>
